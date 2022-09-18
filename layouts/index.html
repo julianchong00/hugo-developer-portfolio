@@ -222,6 +222,18 @@
 <!-- experience -->
 {{ if .Site.Data.homepage.experience.enable }}
 
+{{ range .Site.Data.homepage.experience.item }}
+<div id="modal_{{cond (isset . "titlealt") .titlealt (replaceRE "\\W" "_" .title) }}" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title">{{.title}}</h2>
+        </div>
+        <p>{{.description | safeHTML}}</p>
+    </div>
+</div>
+{{ end }}
+
 <section class="uk-margin-large-bottom">
     <div class="uk-container">
         <h1 class="uk-heading-line  uk-heading-medium"><span>Experience</span></h1>
@@ -231,7 +243,8 @@
 
             {{ range .Site.Data.homepage.experience.item }}
             <div>
-                <div class="uk-card uk-card-default uk-height-large">
+                <div class="uk-card uk-card-default uk-height-large" style="cursor: pointer"
+                    uk-toggle="target: #modal_{{cond (isset . "titlealt") .titlealt (replaceRE "\\W" "_" .title) }}">
                     <div class="uk-card-media-top">
                         <img class="contain experience" src="{{.logo}}" alt="" style="padding: 20px" loading="lazy">
                     </div>
@@ -386,6 +399,7 @@
 -->
 {{ if .Site.Data.homepage.education.enable }}
 <!-- education -->
+
 <section class="uk-margin-xlarge-bottom">
     <div class="uk-container">
 
@@ -405,7 +419,8 @@
                         <div style="height: 5em">
                             <h3 class="uk-card-title">{{.academy}}</h3>
                         </div>
-                        <p style="height: 4em">{{.title}}</p>
+                        <p style="height: 3em">{{.title}}</p>
+                        <p>{{.result}}</p>
                         <p>{{.year}}</p>
                     </div>
                 </div>
