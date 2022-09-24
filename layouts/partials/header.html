@@ -2,6 +2,7 @@
     <nav class="uk-navbar-container uk-margin" uk-navbar="mode: click;" style="padding-right: 3rem">
         <div class="uk-navbar-right">
             <ul class="uk-navbar-nav uk-visible@s">
+                {{ partial "toggle.html" . }}
                 {{if .IsHome}}
                 <li class="uk-active "><a style="font-size: 18px; text-transform: none"
                         href="{{.Site.BaseURL}}">{{ with .Site.Params.Home }} {{ . }} {{ end }}</a></li>
@@ -24,6 +25,7 @@
                 <li><a style="font-size: 18px; text-transform: none" href="{{ .URL | relURL }}">{{.Name}}</a></li>
                 {{end}}
                 {{end}}
+                
             </ul>
 
             <a class="uk-navbar-toggle uk-hidden@s" uk-toggle="target: #sidenav" uk-navbar-toggle-icon href="#"></a>
@@ -36,6 +38,7 @@
     <div class="uk-offcanvas-bar uk-flex uk-flex-column">
 
         <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+            
             {{if .IsHome}}
             <li class="uk-active"><a style="font-size: 18px" href="{{.Site.BaseURL}}">{{ with .Site.Params.Home }} {{ . }} {{ end }}</a>
             </li>
