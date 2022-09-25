@@ -27,7 +27,6 @@
 <script>
     var body = document.body;
     var footer = document.querySelector('footer');
-    var nav = document.querySelector('nav');
 	var switcher = document.getElementsByClassName('js-toggle')[0];
 
 	//Click on dark mode icon. Add dark mode classes and wrappers. Store user preference through sessions
@@ -38,13 +37,11 @@
 		if (this.classList.contains('js-toggle--checked')) {
 			body.classList.add('dark-mode');
             footer.classList.add('dark-mode');
-            nav.classList.add('dark-mode');
 			//Save user preference in storage
 			localStorage.setItem('darkMode', 'true');
 		} else {
 			body.classList.remove('dark-mode');
             footer.classList.remove('dark-mode');
-            nav.classList.remove('dark-mode');
 			setTimeout(function() {
 				localStorage.removeItem('darkMode');
 			}, 100);
@@ -53,11 +50,9 @@
 
 	//Check Storage. Keep user preference on page reload
 	if (localStorage.getItem('darkMode')) {
-		//body.classList.add('dark-mode');
         switcher.classList.add('js-toggle--checked');
         body.classList.add('dark-mode');
         footer.classList.add('dark-mode');
-        nav.classList.add('dark-mode');
 	}
 
 </script>
