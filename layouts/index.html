@@ -176,7 +176,7 @@
 </div>
 {{ end }}
 
-{{/*  Skills section with modals disabled  */}}
+<!-- Skills section with modals disabled -->
 
 <section class="uk-margin-large-top uk-margin-large-bottom">
     <div class="uk-container">
@@ -196,9 +196,9 @@
 
 </section>
 
-{{/*  Skills section with modals enabled  */}}
+<!-- Skills section with modals enabled -->
 
-{{/*  <section class="uk-margin-large-top uk-margin-large-bottom">
+<!--  <section class="uk-margin-large-top uk-margin-large-bottom">
     <div class="uk-container">
         <h1 class="uk-heading-line uk-text-center uk-heading-medium"><span>Skills</span></h1>
 
@@ -216,7 +216,7 @@
 
     </div>
 
-</section>  */}}
+</section>  -->
 
 
 
@@ -252,11 +252,12 @@
         <div class="uk-modal-header">
             <h2 class="uk-modal-title">{{.title}}</h2>
         </div>
-        {{ range .description }}
+
         <ul>
+        {{ range .description }}
             <li>{{ .desc | safeHTML}}</li>
-        </ul>
         {{ end }}
+        </ul>
     </div>
 </div>
 {{ end }}
