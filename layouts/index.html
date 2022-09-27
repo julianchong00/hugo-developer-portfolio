@@ -176,7 +176,29 @@
 </div>
 {{ end }}
 
+{{/*  Skills section with modals disabled  */}}
+
 <section class="uk-margin-large-top uk-margin-large-bottom">
+    <div class="uk-container">
+        <h1 class="uk-heading-line uk-text-center uk-heading-medium"><span>Skills</span></h1>
+
+        <div class="uk-child-width-1-6@l uk-child-width-1-3@m uk-child-width-1-3@s uk-child-width-1-2 uk-text-center uk-flex-center"
+            uk-grid>
+            {{ range .Site.Data.homepage.skill.item }}
+            <div class="imagemargin">
+                <img class="contain skills" src="{{.logo}}" alt="{{.company}}" loading="lazy">
+                <h4>{{.title }}</h4>
+            </div>
+            {{ end }}
+        </div>
+
+    </div>
+
+</section>
+
+{{/*  Skills section with modals enabled  */}}
+
+{{/*  <section class="uk-margin-large-top uk-margin-large-bottom">
     <div class="uk-container">
         <h1 class="uk-heading-line uk-text-center uk-heading-medium"><span>Skills</span></h1>
 
@@ -194,9 +216,7 @@
 
     </div>
 
-</section>
-
-
+</section>  */}}
 
 
 
@@ -232,7 +252,11 @@
         <div class="uk-modal-header">
             <h2 class="uk-modal-title">{{.title}}</h2>
         </div>
-        <p>{{.description | safeHTML}}</p>
+        {{ range .description }}
+        <ul>
+            <li>{{ .desc | safeHTML}}</li>
+        </ul>
+        {{ end }}
     </div>
 </div>
 {{ end }}
@@ -245,8 +269,8 @@
             style="padding-left: 20px; padding-right: 20px">
 
             {{ range .Site.Data.homepage.experience.item }}
-            <div>
-                <div class="uk-card uk-card-default uk-height-large" style="cursor: pointer"
+            <div class="uk-transition-toggle" tabindex="0">
+                <div class="uk-card uk-card-default uk-height-large uk-card-hover uk-transition-scale-up uk-transition-opaque" style="cursor: pointer"
                     uk-toggle="target: #modal_{{cond (isset . "titlealt") .titlealt (replaceRE "\\W" "_" .title) }}">
                     <div class="uk-card-media-top">
                         <img class="contain experience" src="{{.logo}}" alt="" style="padding: 20px" loading="lazy">
