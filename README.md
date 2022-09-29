@@ -1,10 +1,12 @@
-![GitHub](https://img.shields.io/github/license/samrobbins85/hugo-developer-portfolio?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/julianchong00/hugo-developer-portfolio?style=for-the-badge)
 
-# Developer Portfolio
+# Hugo Developer Portfolio Theme
 
-![Website Image](https://res.cloudinary.com/samrobbins/image/upload/v1591885280/screenshot_aexm2m.png)
+Forked from Sam Robbin's [developer portfolio theme](https://github.com/samrobbins85/hugo-developer-portfolio), modified to fit my own purposes. I use this customised theme for my personal website hosted at [julianchong00.github.io](https://julianchong00.github.io).
 
-## Features
+<!-- ![Website Image](https://res.cloudinary.com/samrobbins/image/upload/v1591885280/screenshot_aexm2m.png) -->
+
+<!-- ## Features
 
 - Responsive Design
 - Blog Section
@@ -343,4 +345,4 @@ name = "Firefox WebExtensions"
 url = "https://www.mozilla.org/en-GB/firefox/"
 ```
 
-The [[tech]] item can be repeated as many times as you desire.
+The [[tech]] item can be repeated as many times as you desire. -->
